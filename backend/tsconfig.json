@@ -9,6 +9,7 @@
     "lib": ["ES2020"],
     "types": ["node"],
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
 
     "sourceMap": true,

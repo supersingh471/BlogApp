@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 const router = Router();
 
 router.post("/signup", async (req, res) => {
+
 	const existingUser = await prisma.user.findUnique({
 		where: {email: req.body.email}
 	})
@@ -34,7 +35,35 @@ router.post("/signup", async (req, res) => {
 		message: "user created",
 		token
 	});
+	console.log("Body:", req.body);
+
 } )
 
+//signin route
+router.post("/signin", async (req, res) => {
+	const userExists = await prisma.user.findUnique({
+		where: {
+			email: req.body.email,
+			password: req.body.password
+		}
+	})
+
+	if(!userExists) {
+		return res.status(400).json({
+			message: "User doesn't exist"
+		})
+	}
+
+	const userId = userExists.id;
+
+	const token = jwt.sign({userId}, JWT_SECRET);
+
+	res.status(200).json({
+		message: "User login successfull",
+		token
+	});
+
+	console.log(req.body);
+});
 
 export default router;

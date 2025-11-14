@@ -5,16 +5,16 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
+
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Users {
+model User {
 	id Int @id @default (autoincrement())
 	email String @unique
 	firstName String
@@ -29,6 +29,6 @@ model Posts {
 	content   String?
 	createdAt DateTime @default(now())
 	updated_at  DateTime @updatedAt
-	author Users    @relation(fields: [authorId], references: [id])
+	author User    @relation(fields: [authorId], references: [id])
   	authorId  Int
 }

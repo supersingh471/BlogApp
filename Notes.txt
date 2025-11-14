@@ -1,0 +1,19 @@
+router.post("/signup", async (req, res) => {
+	
+	This route take request from body and check if an account already exist with given credentials
+	if not then it creates new user and stores it database
+	
+	it checks if given credentials user already exist in database using findOne() function and if else
+	if user doesn't exist then it creates new user using create() function
+	after creating user, it takes the user.id from created user 
+	and then assign the JWT_SECRET to userId
+})
+
+router.post("/signin", asynce (req, res) => {
+	
+	This route take user request from body and to verifies their credentials for users to login
+
+	it finds the users in database using findOne() function 
+	checks if user doesn't exist then send error
+	if exist then it assign the JWT_SECRET using sign() function
+})
