@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/*@theme {
+  /* Your custom theme variables 
+  --color-background-dark: #0f0f0f;
+  --color-text-dark: #ffffff;
+}
+
+/* Optional: Set dark mode defaults 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}*/
