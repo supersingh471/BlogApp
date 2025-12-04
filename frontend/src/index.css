@@ -1,14 +1,4 @@
+/*index.css*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;...');
 @import "tailwindcss";
 
-/*@theme {
-  /* Your custom theme variables 
-  --color-background-dark: #0f0f0f;
-  --color-text-dark: #ffffff;
-}
-
-/* Optional: Set dark mode defaults 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-}*/
