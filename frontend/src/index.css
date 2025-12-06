@@ -1,4 +1,7 @@
-/*index.css*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;...');
+/* 1. Import Google Font first */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap");
+
+/* 2. Tailwind v4 layer */
 @import "tailwindcss";
 
+/* 3. (Optional) Add your own classes here */
