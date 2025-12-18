@@ -34,14 +34,15 @@ export default function Dashboard() {
 		},
 	]);
 	return (
-	  <div className="min-h-screen w-full bg-linear-to-b from-[#c8bced] to-white pt-8">
-		<div className="mx-20 h-20 rounded-xl ring-1 ring-purple-500/50">
-			<div className="p-5 text-4xl"><Heading title="DevBlog"/></div>
-		</div>
+	  <div className="min-h-screen w-full bg-[linear-gradient(135deg,#F5F3FF,#F3F0FF,#F0F9FF)]">
+		<div className="h-20 bg-[linear-gradient(to_right,#E9D5FF,#DDD6FE,#E0E7FF)] shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
+			<div className="absolute -bottom-6 left-0 right-0 h-6 bg-[linear-gradient(to_bottom,#DDA0DD,#E6E6FA,#E0F2FE)]"></div>
+		</div>	
 
 		<div className="flex mt-10 h-140 w-full">
-			<div className="mt-5 h-120 w-120 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl">
-			<div className="flex flex-col h-110 w-110 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
+			<div className="mt-5 h-120 w-120 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #B8A3E6 0%, #D5C9F0 30%, transparent 60%), radial-gradient(circle at 100% 100%, #7AACF7 0%, #BDDAF8 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #C8B3E6 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #A8C9F5 0%, transparent 55%), #EDE9FE' }}>
+			<div className="flex flex-col h-110 w-110 bg-white shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
 				<div className="flex justify-between text-2xl p-4"><Heading title="Create New Post"/><svg className="w-[55px] h-[55px] fill-[#0a0a0a]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
 				</div>
