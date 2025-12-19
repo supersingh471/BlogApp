@@ -35,22 +35,22 @@ export default function Dashboard() {
 	]);
 	return (
 	  <div className="min-h-screen w-full bg-[linear-gradient(135deg,#F5F3FF,#F3F0FF,#F0F9FF)]">
-		<div className="h-20 bg-[linear-gradient(to_right,#E9D5FF,#DDD6FE,#E0E7FF)] shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+		<div className="h-20 bg-[linear-gradient(to_right,#D8B4FE,#C4B5FD,#C7D2FE)] shadow-[0_6px_30px_rgba(139,92,246,0.5)]">
 			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
 			<div className="absolute -bottom-6 left-0 right-0 h-6 bg-[linear-gradient(to_bottom,#DDA0DD,#E6E6FA,#E0F2FE)]"></div>
 		</div>	
 
 		<div className="flex mt-10 h-140 w-full">
-			<div className="mt-5 h-120 w-120 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #B8A3E6 0%, #D5C9F0 30%, transparent 60%), radial-gradient(circle at 100% 100%, #7AACF7 0%, #BDDAF8 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #C8B3E6 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #A8C9F5 0%, transparent 55%), #EDE9FE' }}>
-			<div className="flex flex-col h-110 w-110 bg-white shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
-				<div className="flex justify-between text-2xl p-4"><Heading title="Create New Post"/><svg className="w-[55px] h-[55px] fill-[#0a0a0a]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+			<div className="mt-5 h-120 w-100 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
+			<div className="flex flex-col h-110 w-90 bg-[#E0D3ED] shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
+				<div className="flex justify-between text-xl font-semibold p-4"><Heading title="Create New Post"/><svg className="w-[55px] h-[55px] fill-[#0a0a0a]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
 				</div>
-				<input className="pl-2 h-10 w-100 ml-5 bg-purple-200" type="text" placeholder="Title"/>
-				<textarea className="mt-8 mx-5 pl-2 h-45 bg-purple-200" placeholder="Content"></textarea>
-				<button className="flex items-center h-12 w-100 mt-10 mx-5 bg-gray-900 rounded-md text-white text-md font-semibold cursor-pointer">
+				<input className="pl-2 h-10 w-80 ml-5 bg-[#F3F0FA] rounded-md" type="text" placeholder="Title"/>
+				<textarea className="mt-8 mx-5 pl-2 h-45 bg-[#F3F0FA] rounded-md" placeholder="Content"></textarea>
+				<button className="flex items-center h-12 w-80 mt-10 mx-5 bg-[linear-gradient(to_right,#A855F7,#9333EA,#7C3AED)] rounded-md text-white text-md font-semibold cursor-pointer">
 					<span className="flex-1 text-center">-- Publish Post</span>
-				<svg className="pr-4 w-9 h-9 fill-[#8e8e8e]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+				<svg className="pr-4 w-9 h-9 fill-[#f3f0f0]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
 				</button>
 			</div>
