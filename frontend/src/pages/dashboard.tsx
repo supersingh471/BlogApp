@@ -34,11 +34,9 @@ export default function Dashboard() {
 		},
 	]);
 	return (
-	  <div className="min-h-screen w-full bg-[linear-gradient(135deg,#F5F3FF,#F3F0FF,#F0F9FF)]">
-		<div className="h-20 bg-[linear-gradient(to_right,#D8B4FE,#C4B5FD,#C7D2FE)] shadow-[0_6px_30px_rgba(139,92,246,0.5)]">
+	  <div className="min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
 			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
 			<div className="absolute -bottom-6 left-0 right-0 h-6 bg-[linear-gradient(to_bottom,#DDA0DD,#E6E6FA,#E0F2FE)]"></div>
-		</div>	
 
 		<div className="flex mt-10 h-140 w-full">
 			<div className="mt-5 h-120 w-100 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
@@ -56,9 +54,9 @@ export default function Dashboard() {
 			</div>
 			</div>
 
-			<div className="grid grid-cols-2 gap-4 w-220 h-120 ml-10 mt-5 p-5 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+			<div className="grid grid-cols-2 gap-4 w-220 h-120 ml-10 mt-5 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
 				{blogs.map((blog) => (
-					<div key={blog.id} className="h-full p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md cursor-pointer transition-all duration-300 ease-out
+					<div key={blog.id} className="h-full p-5 bg-[linear-gradient(to_bottom,#F49EE6,#DDFCFB)] shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md cursor-pointer transition-all duration-300 ease-out
 					hover:-translate-y-1
 					hover:scale-[1.02]
 					hover:shadow-2xl">
