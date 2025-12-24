@@ -36,16 +36,15 @@ export default function Dashboard() {
 	return (
 	  <div className="min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
 			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
-			<div className="absolute -bottom-6 left-0 right-0 h-6 bg-[linear-gradient(to_bottom,#DDA0DD,#E6E6FA,#E0F2FE)]"></div>
-
+			
 		<div className="flex mt-10 h-140 w-full">
 			<div className="mt-5 h-120 w-100 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
 			<div className="flex flex-col h-110 w-90 bg-[#E0D3ED] shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
 				<div className="flex justify-between text-xl font-semibold p-4"><Heading title="Create New Post"/><svg className="w-[55px] h-[55px] fill-[#0a0a0a]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
 				</div>
-				<input className="pl-2 h-10 w-80 ml-5 bg-[#F3F0FA] rounded-md" type="text" placeholder="Title"/>
-				<textarea className="mt-8 mx-5 pl-2 h-45 bg-[#F3F0FA] rounded-md" placeholder="Content"></textarea>
+				<input className="pl-2 h-10 w-80 ml-5 bg-[#F3F0FA] rounded-md focus:outline-none" type="text" placeholder="Title"/>
+				<textarea className="mt-8 mx-5 pl-2 h-45 bg-[#F3F0FA] rounded-md focus:outline-none" placeholder="Content"></textarea>
 				<button className="flex items-center h-12 w-80 mt-10 mx-5 bg-[linear-gradient(to_right,#A855F7,#9333EA,#7C3AED)] rounded-md text-white text-md font-semibold cursor-pointer">
 					<span className="flex-1 text-center">-- Publish Post</span>
 				<svg className="pr-4 w-9 h-9 fill-[#f3f0f0]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
