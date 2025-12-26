@@ -3,15 +3,19 @@ import { Heading } from "../components/Header";
 export default function Signup() {
 
 	return (
-		<div className="flex flex-col min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
-			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
-			<div className="flex flex-col w-80 border">
-				<p>Start Sharing</p>
-				<p>what you learn</p>
+		<div className="flex justify-between min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
+			
+			<div className="h-130 w-110 mt-10 ml-20 p-4">
+				<span className="text-3xl font-semibold text-gray-800"><Heading title="DevBlog"/></span>
+				<p className="font-semibold text-4xl text-gray-800 mt-20">Start Sharing</p>
+				<p className="font-semibold text-4xl text-gray-800">what you learn.</p>
+				<p className="text-lg mt-4 text-gray-800">Write. Reflect. Grow as a developer </p>
+				<p className="text-lg text-gray-600">Join developers documenting their journey in tech</p>
 			</div>
-			<div className="flex flex-col items-center h-135 w-100 mr-30 rounded-xl bg-[#F3CEF6]/90 backdrop-blur-xl border border-white/40 shadow-[0_20px_40px_rgba(147,112,219,0.15)]
- self-end">
-				<div className="flex font-semibold text-3xl pt-8"><Heading title="Create your account"/></div>
+
+			<div className="flex flex-col mt-20 items-center h-135 w-100 mr-15 rounded-xl bg-[#F3CEF6]/90 backdrop-blur-xl border border-white/40 shadow-[0_20px_40px_rgba(147,112,219,0.15)]
+ ">
+				<div className="flex font-semibold text-3xl pt-8 text-gray-800"><Heading title="Create your account"/></div>
 				<p className="text-lg text-gray-700">It takes less than a minute</p>
 				
 					<input className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Email" />
@@ -37,6 +41,7 @@ export default function Signup() {
 					<a href="" className="text-gray-900"> Sign in</a>
 				</div>
 			</div>
+			
 		</div>
 	)
 	
