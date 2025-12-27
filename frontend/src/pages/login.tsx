@@ -1,6 +1,27 @@
+import { useState } from "react";
 import { Heading } from "../components/Header";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const navigate = useNavigate();
+
+	const signin = async () => {
+					try {
+						const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
+							email,
+							password
+						});
+						localStorage.setItem("token", response.data.token);
+						navigate("/Dashboard");
+					}catch(error: any) {
+						console.error("Login failed:", error.response?.data || error.message);
+						alert("Login failed, please try again");
+					}
+				};
 
 	return (
 		<div className="flex justify-between min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
@@ -14,10 +35,14 @@ export default function Login() {
 				<span className="mt-6 text-center text-2xl font-semibold text-gray-800">Login in to your account</span>	
 				<p className="p-2 text-lg text-gray-700">Please ensure your details.</p>
 
-				<input className="bg-[#f9ecf7] text-gray-700 p-2 w-70 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Email" />
-				<input className="bg-[#f9ecf7] text-gray-700 p-2 w-70 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Password" />
+				<input onChange={(e) => {
+					setEmail(e.target.value);
+				}} className="bg-[#f9ecf7] text-gray-700 p-2 w-70 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Email" />
+				<input onChange={(e) => {
+					setPassword(e.target.value);
+				}} className="bg-[#f9ecf7] text-gray-700 p-2 w-70 py-1.5 mt-6 rounded-md focus:outline-none" type="password" placeholder="Password" />
 
-				<button className="flex items-center h-10 w-70 mt-8 mx-5 bg-[linear-gradient(to_right,#D580CC,#8DD8D6,#D580CC)] rounded-md text-white text-md font-semibold cursor-pointer">
+				<button onClick={signin} className="flex items-center h-10 w-70 mt-8 mx-5 bg-[linear-gradient(to_right,#D580CC,#8DD8D6,#D580CC)] rounded-md text-white text-md font-semibold cursor-pointer">
 					<span className="flex-1 text-center text-lg">Log In</span>
 				<svg className="pr-4 w-9 h-9 fill-[#f3f0f0]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
@@ -34,7 +59,7 @@ export default function Login() {
 				</button>
 
 				<div className="mt-4 text-gray-500 text-sm">Don't have an account?
-					<a href="" className="text-gray-900"> Sign up</a>
+					<Link to={"/signup"} className="text-gray-900"> Sign up</Link>
 				</div>
 			</div>
 			

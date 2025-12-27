@@ -1,7 +1,31 @@
+import { useState } from "react";
 import { Heading } from "../components/Header";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios"
 
 export default function Signup() {
+	const [email,setEmail] = useState("");
+	const [firstName,setFirtName] = useState("");
+	const [lastName,setLastName] = useState("");
+	const [password,setPassword] = useState("");
 
+	const navigate = useNavigate();
+
+	const signup = async () => {
+						try {
+							const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+								email,
+								firstName,
+								lastName,
+								password
+							});
+							localStorage.setItem("token", response.data.token);
+							navigate("/Dashboard");
+						}catch(error: any) {
+							console.error("Signup failed:", error.response?.date || error.message);
+							alert("Signup failed, Please try again");
+						}
+					};
 	return (
 		<div className="flex justify-between min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
 			
@@ -18,12 +42,20 @@ export default function Signup() {
 				<div className="flex font-semibold text-3xl pt-8 text-gray-800"><Heading title="Create your account"/></div>
 				<p className="text-lg text-gray-700">It takes less than a minute</p>
 				
-					<input className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Email" />
-					<input className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="First Name" />
-					<input className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Last Name" />
-					<input className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Password" />
+					<input onChange={(e) => {
+						setEmail(e.target.value);
+					}} className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Email" />
+					<input onChange={(e) => {
+						setFirtName(e.target.value);
+					}} className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="First Name" />
+					<input onChange={(e) => {
+						setLastName(e.target.value);
+					}} className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Last Name" />
+					<input onChange={(e) => {
+						setPassword(e.target.value);
+					}} className="bg-[#f9ecf7] text-gray-700 p-2 w-80 py-1.5 mt-6 rounded-md focus:outline-none" type="text" placeholder="Password" />
 
-					<button className="flex items-center h-10 w-80 mt-8 mx-5 bg-[linear-gradient(to_right,#D580CC,#8DD8D6,#D580CC)] rounded-md text-white text-md font-semibold cursor-pointer">
+					<button onClick={signup} className="flex items-center h-10 w-80 mt-8 mx-5 bg-[linear-gradient(to_right,#D580CC,#8DD8D6,#D580CC)] rounded-md text-white text-md font-semibold cursor-pointer">
 					<span className="flex-1 text-center text-lg">Craete Account</span>
 				<svg className="pr-4 w-9 h-9 fill-[#f3f0f0]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 				<path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
@@ -38,7 +70,7 @@ export default function Signup() {
 					Sign up with <span className="text-gray-900">Google</span>
 				</button>
 				<div className="mt-4 text-gray-500 text-sm">Already have an account?
-					<a href="" className="text-gray-900"> Sign in</a>
+					<Link to={"/login"} className="text-gray-900"> Sign in</Link>
 				</div>
 			</div>
 			
