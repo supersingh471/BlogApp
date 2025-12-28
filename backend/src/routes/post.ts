@@ -38,7 +38,8 @@ router.get("/posts", authMiddleware, async (req, res) => {
 		}else {
 			//fetch all post for user
 			const allPosts = await prisma.posts.findMany({
-				where: {authorId: req.userId}
+				where: {authorId: req.userId},
+				include: {author: true}
 			});
 
 			return res.status(200).json({
