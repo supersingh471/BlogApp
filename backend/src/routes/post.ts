@@ -28,16 +28,22 @@ router.get("/posts", authMiddleware, async (req, res) => {
 
 	try{
 		if(Id) {
+			//fetching single post this user
 			const postItem = await prisma.posts.findFirst({where: {id: Id, authorId: req.userId}});
-			if(!postItem) {
+			/*if(!postItem) {
 				return res.status(400).json({
 					message: "Post not found"
 				});
-			}
+			}*/
+		}else {
+			//fetch all post for user
+			const allPosts = await prisma.posts.findMany({
+				where: {authorId: req.userId}
+			});
 
 			return res.status(200).json({
-				post: postItem
-			})
+				posts: allPosts
+			});
 		}
 	}catch(e) {
 		return res.status(400).json({
