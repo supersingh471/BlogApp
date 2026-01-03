@@ -1,12 +1,23 @@
 import axios from "axios";
 import { Heading } from "../components/Header";
 import { useEffect, useState } from "react";
+import { BlogList } from "../components/BlogList";
+
+type Blog = {
+  id: number;
+  title: string;
+  content: string;
+  author: {
+    firstName: string;
+  };
+  createdAt: string | number;
+};
 
 export default function Dashboard() {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
-	const [blogs, setBlogs] = useState<any[]>([]);
+	const [blogs, setBlogs] = useState<Blog[]>([]);
 	const token = localStorage.getItem("token");
 
 	const fetchBlogs = async () => {
@@ -40,13 +51,13 @@ export default function Dashboard() {
 
 	useEffect(() => {
 		fetchBlogs();
-	}, []);
+	}, [fetchBlogs]);
 	
 	return (
 	<div className="min-h-screen w-full bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
 			<div className="p-7 text-3xl font-semibold"><Heading title="DevBlog"/></div>
 			
-		<div className="flex mt-10 h-140 w-full">
+		<div className="flex mt-10 h-full w-full">
 			<div className="mt-5 h-120 w-100 ml-20 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
 			<div className="flex flex-col h-110 w-90 bg-[#E0D3ED] shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md">
 				<div className="flex justify-between text-xl font-semibold p-4"><Heading title="Create New Post"/><svg className="w-[55px] h-[55px] fill-[#0a0a0a]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
@@ -66,21 +77,9 @@ export default function Dashboard() {
 			</div>
 			</div>
 
-			<div className="grid grid-cols-2 gap-4 w-220 h-120 ml-10 mt-5 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
-				{blogs.length > 0 ? (
-					blogs.map((blog: any) => (
-					<div key={blog.id} className="h-full p-5 bg-[linear-gradient(to_bottom,#F49EE6,#DDFCFB)] shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-md cursor-pointer transition-all duration-300 ease-out
-					hover:-translate-y-1
-					hover:scale-[1.02]
-					hover:shadow-2xl">
-						<h2 className="text-xl font-semibold">{blog.title}</h2>
-						<p className="mt-2 text-gray-700">{blog.content}</p>
-						<span className="mt-3 text-sm text-gray-500">{blog.author.firstName} {new Date (blog.createdAt).toLocaleDateString()}</span>
-					</div>
-				))
-				) : (<p className="text-2xl font-semibold text-gray-800">No blogs yet</p>)}
-					
-		</div>
+			<div className="grid grid-cols-2 gap-4 w-220 h-150 ml-10 mt-5 p-5 shadow-[0_0_20px_rgba(168,85,247,0.3)] rounded-xl" style={{ background: 'radial-gradient(circle at 0% 0%, #9B7BD5 0%, #B8A3E6 30%, transparent 60%), radial-gradient(circle at 100% 100%, #5B8FE8 0%, #8FB9F0 30%, transparent 60%), radial-gradient(ellipse at 100% 0%, #A88FD5 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, #7AACF7 0%, transparent 55%), #D5C9F0' }}>
+				<BlogList blogs={blogs}/>
+			</div>
 		</div>
 		
 	</div>
