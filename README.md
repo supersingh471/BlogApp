@@ -5,4 +5,4 @@
 # In authMiddleware, it'll fetch request from Authorization header to authorize tokens and checks if token exist and start with Bearer, if exist it extract JWT token from the header and decode the token with secret key, if token is invalid or expired the try & catch block will throw an error or if token is decoded, it'll be store in userId
 # In user.ts file, we have signup route for users to register themselves
 
- : (<p className="text-2xl font-semibold text-gray-800">No blogs yet</p>)
+ : (<p className="text-lg font-semibold text-gray-800">No blogs yet</p>)
