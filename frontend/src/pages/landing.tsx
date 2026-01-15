@@ -2,14 +2,18 @@ import { Heading } from "../components/Header";
 import { Button } from "../components/Button";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Landing() {
+
+	const navigate = useNavigate();
 	return (
 		<div className="flex flex-col gap-15 w-full h-screen bg-linear-to-b from-[#c8bced] to-white">
 			<div className="flex items-center border h-15 w-full">
 				<div className="px-4 ml-50 text-3xl font-bold font-poppins ">
 					<Heading title="Blogify"/>
-				</div>
+				</div>	
 					<div className="flex items-center gap-13 mx-auto">
 						<a className="text-sm font-bold text-black" href="">Article</a>
 							<Menu as="div" className="text-black relative inline-block">
@@ -89,7 +93,7 @@ export default function Landing() {
 							</Menu>
 				</div>
 				<div className="flex justify-center items-center ml-auto w-34 h-10 rounded-4xl mr-50 text-white bg-black">
-				<Button title="Signup" 
+				<Button onClick={() => navigate("/Dashboard")} title="Signup" 
 				icon={<svg className="ml-2 mt-1 w-4 h-4 fill-[#faf6f6]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   				<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
 				</svg>}/>

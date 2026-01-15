@@ -1,6 +1,7 @@
 type Buttonprops = {
 	title: string;
 	icon?: React.ReactNode;
+	onClick?: () => void;
 };
 
 
