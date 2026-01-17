@@ -12,7 +12,7 @@ export default function Landing() {
 		<div className="flex flex-col gap-15 w-full h-screen bg-linear-to-b from-[#c8bced] to-white">
 			<div className="flex items-center border h-15 w-full">
 				<div className="px-4 ml-50 text-3xl font-bold font-inter tracking-light text-slate-900">
-					<Heading title="Blogify" />
+					<Heading title="Blogify"/>
 				</div>
 				<div className="flex items-center gap-13 mx-auto">
 					<a className="text-sm font-bold text-black" href="">Article</a>
