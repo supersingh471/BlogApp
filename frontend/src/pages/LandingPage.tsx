@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
-
+import CoderImage from '../assets/Coder.png';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8)] backdrop-blur-md">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8,#F8B4F0)] backdrop-blur-md">
       {/* Navbar */}
       <header className="flex py-8 px-10">
 		<h1 className="text-3xl font-bold">Dev Blog</h1>
@@ -52,32 +52,103 @@ export default function LandingPage() {
         </div>
 
         {/* Illustration Placeholder */}
-        
+        <div className="border w-150 h-100 mr-10 rounded-2xl bg-white/70">
+			
+		</div>
       </section>
 
       {/* Features */}
       <section className="px-10 py-16">
+			<h1 className="text-center font-semibold text-3xl">Features to Boost Your Developer Journey</h1>
+		<div className="grid md:grid-cols-4 gap-6 p-6">
+			{[
+				{
+					title: "Share Your Knowledge",
+					desc: "Write and publish posts about what you learn while coding."
+				},
+				{
+					title: "Easy to Use",
+					desc: "User-friendly interface designed to make writing and publishing post a breeze."
+				},
+				{
+					title: "Track Your Progress",
+					desc: "Log your progress, set goals and reflect on your growth as as developer."
+				},
+				{
+					title: "Join Developer Community",
+					desc: "Meet and interact with other developer, share, learn and grow together"
+				}
+			].map((item) => (
+				<div key={item.title} className="rounded-2xl shadow bg-white/50 p-4 cursor-pointer transition-all duration-300 ease-out
+				hover:-translate-y-1.5
+				hover:scale-[1.07]
+				hover:shadow-2xl">
+					<h2 className="font-semibold mb-2 text-2xl">{item.title}</h2>
+					<p className="text-gray-700">{item.desc}</p>
+				</div>
+			))}
+		</div>
         </section>
 
       {/* CTA */}
-      <section className="text-center py-20">
-        <h3 className="text-3xl font-bold">
-          Start Sharing Your Tech Journey
-        </h3>
-        <p className="mt-4 text-gray-700">
-          No social pressure. Just learning, writing, and progress.
-        </p>
-
-        <Link
-          to="/signup"
-          className="inline-block mt-8 px-10 py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold shadow"
-        >
-          Sign Up For Free →
-        </Link>
-      </section>
+      <div className="px-60">
+        <h1 className="text-center text-4xl font-semibold mb-6">
+          Latest Blog Post
+        </h1>
+        <div className="flex rounded-xl p-6 bg-white/50">
+			<img src={CoderImage} alt="Post" 
+				className="w-96 h-32 md:h-64 object-cover rounded-lg"/>
+			<div className="ml-10 gap-4">
+				<h2 className="text-2xl font-bold">Tips for Improving Consistency in Coding</h2>
+			<p className="text-gray-700 text-lg mt-6">
+				Consistent in coding is key to becoming a better developer.<br />
+				Here are some practical tips to improve your coding consistency...<br /></p>
+				<ul className="text-gray-700 text-lg list-disc list-inside pl-6 mt-2">
+				<li>Set daily or weekly coding goals.</li>
+				<li>Practice regularly, even if it's just a little each day.</li>
+				<li>Keep a coding journal to reflect on what you've learned.</li>
+				</ul>
+				<br />
+			</div>
+		</div>
+      </div>
 
       {/* Footer */}
-      
+      <footer className="bg-purple-600 text-white/90 backdrop-blur px-10 py-8 mt-10">
+		<div className="grid grid-cols-5 text-lg">
+		<h1 className="text-white text-3xl ">DevBlog</h1>
+			<div>
+				<h4>Quick Links</h4>
+				<ul className="text-base mt-3">
+					<li><Link to={"/"}>Home</Link></li>
+					<li><Link to={"/"}>Features</Link></li>
+					<li><Link to={"/about"}>About</Link></li>
+					<li><Link to={"/contact"}>Contact</Link></li>
+				</ul>
+			</div>
+			<div>
+				<h4>Resources</h4>
+				<ul className="text-base mt-3">
+					<li><Link to={"/"}>Help Center</Link></li>
+					<li><Link to={"/"}>Documentation</Link></li>
+					<li><Link to={"/about"}>Community</Link></li>
+				</ul>
+			</div>
+			<div>
+				<h4>Connect</h4>
+				<ul className="text-base mt-3">
+					<li><Link to={"/"}>X</Link></li>
+					<li><Link to={"/"}>GitHub</Link></li>
+					<li><Link to={"/about"}>LinkedIn</Link></li>
+				</ul>
+			</div>
+			<div className="">
+			<h4>Subscribe to our newsletter</h4>
+				<input className="w-50 h-10 mt-3 p-2 rounded-md bg-white text-base text-gray-900" type="text" placeholder="Enter your email"/>
+				<Button title="Subscribe"/>
+			</div>
+		</div>
+	  </footer>
       
     </div>
   );
