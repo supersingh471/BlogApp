@@ -21,7 +21,7 @@ export function BlogList ({blogs} : BlogListProps) {
 	//Reset to page 1 when blog array change
 	useEffect(() => {
 		setCurrentPage(1)
-	},[blogs.length]);	
+	},[blogs.length]);
 
 	const totalPages = Math.ceil(blogs.length / itemsPerPage)
 

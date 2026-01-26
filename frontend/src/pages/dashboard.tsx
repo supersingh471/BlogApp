@@ -48,7 +48,7 @@ export default function Dashboard() {
 		//clear form
 		setTitle("");
 		setContent("");
-		setOpen(false); //close the form after publishing
+		//setOpen(false); //close the form after publishing
 		}catch (error: any) {
 			console.error("failed to post blog:", error);
 		}
