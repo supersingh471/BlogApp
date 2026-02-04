@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 import CoderImage from '../assets/Coder.png';
-import Image1 from '../assets/image1.png'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-[linear-gradient(to_bottom,#F8B4F0,#C7F9F8,#F8B4F0)] backdrop-blur-md">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_75%_70%,#306BD0_0%,#1F265C_45%,#060C4B_80%)] backdrop-blur-md">
       {/* Navbar */}
-      <header className="flex py-8 px-10">
-		<h1 className="text-3xl font-bold">Dev Blog</h1>
-		<nav className="flex gap-8 ml-auto mr-10 font-semibold text-lg">
+      <header className="flex py-8 px-10 hover:shadow-[0_12px_12px_rgba(0,0,0,0.1)]">
+		<h1 className="text-3xl text-white/80 font-bold">Dev Blog</h1>
+		<nav className="flex gap-8 ml-auto mr-10 text-white/80 font-semibold text-lg">
 			<Link to={"/"}>Home</Link>
 			<Link to={"/"}>Features</Link>
 			<Link to={"/"}>About</Link>
 			<Link to={"/login"}>Login</Link>
 		</nav>
 		<Link to={"/Signup"}>
-			<div className="flex justify-center items-center w-34 h-10 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold shadow">
+			<div className="flex justify-center items-center w-34 h-10 rounded-xl bg-[#306BD0] text-white font-semibold shadow">
 				<Button title="Signup"
-					icon={<svg className="ml-2 mt-1 w-4 h-4 fill-[#faf6f6]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+					icon={<svg className="ml-2 mt-1 w-4 h-4 fill-[#D099EB]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 					<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
 					</svg>} />
 			</div>
@@ -31,10 +30,10 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between px-10 py-20 gap-10">
         <div className="max-w-xl">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white/80 leading-tight">
             Share What You Learn <br /> As A Developer
           </h2>
-          <p className="mt-6 text-lg text-gray-700">
+          <p className="mt-6 text-lg text-white/60">
             Write, reflect, and grow by documenting your journey in tech.
             Build consistency and clarity—one post at a time.
           </p>
@@ -42,29 +41,23 @@ export default function Landing() {
           <div className="mt-8 flex gap-4">
             <Link
               to="/signup"
-              className="px-8 py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold shadow"
+              className="px-8 py-3 rounded-xl bg-[#306BD0] text-white font-semibold shadow"
             >
               Get Started →
-            </Link>
-            <Link
-              to="/login"
-              className="px-8 py-3 rounded-xl bg-white/70 backdrop-blur border border-white shadow font-semibold"
-            >
-              Login
             </Link>
           </div>
         </div>
 
         {/* Illustration Placeholder */}
-        <section className="w-170 h-120">
-			<img src={Image1} alt="landing" />
+       	 <section className="w-170 h-120">
+			
 		</section>
       </section>
 
       {/* Features */}
       <section className="px-10 py-16">
-			<h1 className="text-center font-semibold text-3xl">Features to Boost Your Developer Journey</h1>
-		<div className="grid md:grid-cols-4 gap-6 p-6">
+			<h1 className="text-center font-semibold text-white/80 text-3xl">Features to Boost Your Developer Journey</h1>
+		<div className="grid md:grid-cols-4 gap-6 p-6 text-white/80">
 			{[
 				{
 					title: "Share Your Knowledge",
@@ -83,12 +76,12 @@ export default function Landing() {
 					desc: "Meet and interact with other developer, share, learn and grow together"
 				}
 			].map((item) => (
-				<div key={item.title} className="rounded-2xl shadow bg-white/50 p-4 cursor-pointer transition-all duration-300 ease-out
+				<div key={item.title} className="rounded-2xl shadow bg-linear-to-br from-[#1C134E] to-[#306BD0] p-4 cursor-pointer transition-all duration-300 ease-out
 				hover:-translate-y-1.5
 				hover:scale-[1.07]
 				hover:shadow-2xl">
 					<h2 className="font-semibold mb-2 text-2xl">{item.title}</h2>
-					<p className="text-gray-700">{item.desc}</p>
+					<p className="text-white/70">{item.desc}</p>
 				</div>
 			))}
 		</div>
@@ -118,7 +111,7 @@ export default function Landing() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-purple-500 text-white/90 backdrop-blur px-10 py-8 mt-10">
+      <footer className="shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.6)] bg-linear-to-br-[#306BD0] text-white/80 backdrop-blur px-10 py-8 mt-10">
 		<div className="grid grid-cols-5 text-xl">
 		<h1 className="text-white text-3xl font-semibold">DevBlog</h1>
 			<div>
@@ -155,7 +148,7 @@ export default function Landing() {
 			<div className="">
 			<h3>Subscribe to our newsletter</h3>
 				<div className="flex items-center mt-5"><input className="w-45 h-8 p-2 rounded-l-md bg-white text-base text-gray-900 focus:shadow-xl focus:outline-none focus:ring-blue-500" type="text" placeholder="Enter your email"/>
-				<button className="bg-purple-600 text-lg rounded-r-md w-50 h-8 hover:bg-purple-800">Subscribe</button>
+				<button className="bg-[#306BD0] text-lg rounded-r-md w-50 h-8 hover:bg-[#1C134E]">Subscribe</button>
 				</div>
 				<section className="flex gap-6 p-2">
 				<a href="https://github.com/supersingh471" 
