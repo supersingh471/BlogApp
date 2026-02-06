@@ -35,17 +35,17 @@ export default function Dashbaord1() {
 			<section className="w-120 h-50 p-5 absolute left-25 mt-5">
 			<p className="text-xl font-semibold text-gray-900">Build your community, start a project.</p>
 				<div className="flex gap-5 ">
-					<button className="flex items-center h-20 w-50 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300">
-						<span className="ml-5">
+					<button className="flex items-center h-20 w-50 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300 hover:border-[#7873db]">
+						<span className="ml-5 px-2 py-2 rounded-lg border-[#b3b0f1] border bg-[#eef2ff]">
 						<svg fill="none" viewBox="0 0 24 24" width="24" height="24">
-						<path fill="currentColor" d="M17.75 11.5a.75.75 0 0 0 1.5 0h-1.5ZM13 21.75a.75.75 0 0 0 0-1.5v1.5Zm2.5-14a.75.75 0 0 0 0-1.5v1.5Zm-8-1.5a.75.75 0 0 0 0 1.5v-1.5Zm6 5.5a.75.75 0 0 0 0-1.5v1.5Zm-6-1.5a.75.75 0 0 0 0 1.5v-1.5ZM17.75 21a.75.75 0 0 0 1.5 0h-1.5Zm1.5-6a.75.75 0 0 0-1.5 0h1.5Zm-3.75 2.25a.75.75 0 0 0 0 1.5v-1.5Zm6 1.5a.75.75 0 0 0 0-1.5v1.5Zm-14-15h8v-1.5h-8v1.5ZM17.75 6v5.5h1.5V6h-1.5ZM13 20.25H7.5v1.5H13v-1.5ZM5.25 18V6h-1.5v12h1.5Zm2.25 2.25A2.25 2.25 0 0 1 5.25 18h-1.5a3.75 3.75 0 0 0 3.75 3.75v-1.5Zm8-16.5A2.25 2.25 0 0 1 17.75 6h1.5a3.75 3.75 0 0 0-3.75-3.75v1.5Zm-8-1.5A3.75 3.75 0 0 0 3.75 6h1.5A2.25 2.25 0 0 1 7.5 3.75v-1.5Zm8 4h-8v1.5h8v-1.5Zm-2 4h-6v1.5h6v-1.5ZM19.25 21v-3h-1.5v3h1.5Zm0-3v-3h-1.5v3h1.5Zm-3.75.75h3v-1.5h-3v1.5Zm3 0h3v-1.5h-3v1.5Z"></path>
+						<path fill="#3f36ed" d="M17.75 11.5a.75.75 0 0 0 1.5 0h-1.5ZM13 21.75a.75.75 0 0 0 0-1.5v1.5Zm2.5-14a.75.75 0 0 0 0-1.5v1.5Zm-8-1.5a.75.75 0 0 0 0 1.5v-1.5Zm6 5.5a.75.75 0 0 0 0-1.5v1.5Zm-6-1.5a.75.75 0 0 0 0 1.5v-1.5ZM17.75 21a.75.75 0 0 0 1.5 0h-1.5Zm1.5-6a.75.75 0 0 0-1.5 0h1.5Zm-3.75 2.25a.75.75 0 0 0 0 1.5v-1.5Zm6 1.5a.75.75 0 0 0 0-1.5v1.5Zm-14-15h8v-1.5h-8v1.5ZM17.75 6v5.5h1.5V6h-1.5ZM13 20.25H7.5v1.5H13v-1.5ZM5.25 18V6h-1.5v12h1.5Zm2.25 2.25A2.25 2.25 0 0 1 5.25 18h-1.5a3.75 3.75 0 0 0 3.75 3.75v-1.5Zm8-16.5A2.25 2.25 0 0 1 17.75 6h1.5a3.75 3.75 0 0 0-3.75-3.75v1.5Zm-8-1.5A3.75 3.75 0 0 0 3.75 6h1.5A2.25 2.25 0 0 1 7.5 3.75v-1.5Zm8 4h-8v1.5h8v-1.5Zm-2 4h-6v1.5h6v-1.5ZM19.25 21v-3h-1.5v3h1.5Zm0-3v-3h-1.5v3h1.5Zm-3.75.75h3v-1.5h-3v1.5Zm3 0h3v-1.5h-3v1.5Z"></path>
 						</svg>
 						</span>
 						New docs</button>
-					<button className="flex items-center h-20 w-50 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300">
-					<span className="ml-5">
+					<button className="flex items-center h-20 w-50 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300 hover:border-[#6bce8f]">
+					<span className="ml-5 px-2 py-2 rounded-lg border-[#9bf7b7] border bg-[#f0fdf4]">
 					<svg fill="none" viewBox="0 0 24 24" width="24" height="24">
-					<path stroke="currentColor" d="M8.25 3.91H6c-1.66 0-3 1.336-3 3v2.5m5.25-5.5H18c1.66 0 3 1.34 3 3v2.5M8.25 3.91v5.5m4.25 10.68H6c-1.66 0-3-1.34-3-3V9.41m18 0v2.84m0-2.84H8.25M3 9.41h5.25M18.5 15v6m3-3h-6" stroke-linecap="round" stroke-width="1.5"></path>
+					<path stroke="green" d="M8.25 3.91H6c-1.66 0-3 1.336-3 3v2.5m5.25-5.5H18c1.66 0 3 1.34 3 3v2.5M8.25 3.91v5.5m4.25 10.68H6c-1.66 0-3-1.34-3-3V9.41m18 0v2.84m0-2.84H8.25M3 9.41h5.25M18.5 15v6m3-3h-6" stroke-linecap="round" stroke-width="1.5"></path>
 						</svg></span>
 						New blog</button>
 				</div>
