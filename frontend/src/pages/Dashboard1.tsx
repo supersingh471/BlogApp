@@ -32,7 +32,7 @@ export default function Dashbaord1() {
 			</div>	
 			</nav>
 			</header>
-			<section className="w-120 h-50 p-5 absolute left-25 mt-5">
+			<section className="w-full h-50 p-5 absolute left-25 mt-5">
 			<p className="text-xl font-semibold text-gray-900">Build your community, start a project.</p>
 				<div className="flex gap-5 ">
 					<button className="flex items-center h-20 w-50 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300 hover:border-[#7873db]">
@@ -49,7 +49,39 @@ export default function Dashbaord1() {
 						</svg></span>
 						New blog</button>
 				</div>
+
+				<section className="flex flex-col relative w-300 h-20 gap-1 border-b border-b-gray-300 mt-15">
+					<p className="text-lg text-gray-800 font-semibold">Your docs</p>
+					<p className="text-base text-gray-600">Create a beautiful documentation for your product.</p>
+					
+						<button className="flex items-center justify-center gap-2 w-40 h-8 mt-4 border border-gray-300 rounded-full absolute right-2 hover:bg-slate-100/80 cursor-pointer">Expand section
+							<span>
+								<svg fill="none" viewBox="0 0 16 16" width="16" height="16">
+									<path stroke="currentColor" d="M8 9.412V14m0 0-2.118-2.118M8 14l2.118-2.118M8 6.588V2m0 0L5.882 4.118M8 2l2.118 2.118" stroke-linecap="round" stroke-linejoin="round">
+									</path>
+								</svg>
+							</span>
+						</button>
+					
+				</section>
+
+				<section className="flex flex-col relative w-300 h-20 gap-1 border-b border-b-gray-300 mt-15">
+					<p className="text-lg text-gray-800 font-semibold">Your blogs</p>
+					<p className="text-base text-gray-600">Create and manage your blogs.</p>
+					
+						<button className="flex items-center justify-center gap-2 w-40 h-8 mt-4 border border-gray-300 rounded-full absolute right-2 hover:bg-slate-100/80 cursor-pointer">Expand section
+							<span>
+								<svg fill="none" viewBox="0 0 16 16" width="16" height="16">
+									<path stroke="currentColor" d="M8 9.412V14m0 0-2.118-2.118M8 14l2.118-2.118M8 6.588V2m0 0L5.882 4.118M8 2l2.118 2.118" stroke-linecap="round" stroke-linejoin="round">
+									</path>
+								</svg>
+							</span>
+						</button>
+					
+				</section>
 			</section>
+
+			
 		</div>
 	)
 }
