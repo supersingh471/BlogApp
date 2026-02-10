@@ -1,63 +1,61 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
-import CoderImage from '../assets/Coder.png';
+import blogImage from '../assets/blogImage.png';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { GiPenguin } from "react-icons/gi";
+import { IoIosArrowForward } from "react-icons/io";
 
 
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_75%_70%,#306BD0_0%,#1F265C_45%,#060C4B_80%)] backdrop-blur-md">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom,#FBFBFC,#F4F3FB)] backdrop-blur-md">
       {/* Navbar */}
-      <header className="flex py-8 px-10 hover:shadow-[0_12px_12px_rgba(0,0,0,0.1)]">
-		<h1 className="text-3xl text-white/80 font-bold">Dev Blog</h1>
-		<nav className="flex gap-8 ml-auto mr-10 text-white/80 font-semibold text-lg">
-			<Link to={"/"}>Home</Link>
+      <header className="flex py-3 px-8 bg-white border-b border-gray-300">
+		<h1 className="flex text-2xl font-semibold gap-2 mr-5 cursor-pointer"><GiPenguin size={30}/>DevBlog</h1>
+		<nav className="flex gap-10 text-gray-800 font-semibold text-base cursor-pointer">
+			<Link to={"/Landing"}>Home</Link>
 			<Link to={"/"}>Features</Link>
 			<Link to={"/"}>About</Link>
 			<Link to={"/login"}>Login</Link>
 		</nav>
 		<Link to={"/Signup"}>
-			<div className="flex justify-center items-center w-34 h-10 rounded-xl bg-[#306BD0] text-white font-semibold shadow">
-				<Button title="Signup"
-					icon={<svg className="ml-2 mt-1 w-4 h-4 fill-[#D099EB]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-					<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-					</svg>} />
+			<div className="flex justify-center hover:bg-[#030407] w-21 h-9 absolute right-10 rounded-lg bg-[#19191C] text-white font-semibold shadow">
+				<Button title="Sign up"/>
 			</div>
 		</Link>
 	  </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between px-10 py-20 gap-10">
-        <div className="max-w-xl">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white/80 leading-tight">
-            Share What You Learn <br /> As A Developer
-          </h2>
-          <p className="mt-6 text-lg text-white/60">
-            Write, reflect, and grow by documenting your journey in tech.
-            Build consistency and clarity—one post at a time.
+      <section className="flex flex-col justify-center items-center gap-2 mt-20">
+        
+          <p className="text-4xl font-bold text-gray-800 leading-tight">
+            Share What You Learn As A Developer
           </p>
-
-          <div className="mt-8 flex gap-4">
+          <p className="mt-2 text-lg text-gray-700">
+            Write, reflect, and grow by documenting your journey in tech.
+            Build consistency 
+          </p>
+			<p className="text-lg text-gray-700">and clarity—one post at a time.</p>
+          <div className="mt-4 flex gap-4 cursor-pointer">
             <Link
               to="/signup"
-              className="px-8 py-3 rounded-xl bg-[#306BD0] text-white font-semibold shadow"
+              className="px-8 py-3 rounded-lg hover:bg-[#030407] bg-[#19191C] text-white font-semibold shadow"
             >
               Get Started →
             </Link>
-          </div>
-        </div>
+			<span className="border border-gray-400 flex items-center justify-center gap-3 rounded-lg w-35 text-slate-700 hover:bg-slate-200">
+				<Button title="Learn More"/><IoIosArrowForward size={11} className="mt-0.5"/>
 
-        {/* Illustration Placeholder */}
-       	 <section className="w-170 h-120">
-			
-		</section>
+			</span>
+          </div>
+       	 
       </section>
 
       {/* Features */}
       <section className="px-10 py-16">
-			<h1 className="text-center font-semibold text-white/80 text-3xl">Features to Boost Your Developer Journey</h1>
-		<div className="grid md:grid-cols-4 gap-6 p-6 text-white/80">
+			<h1 className="text-center font-semibold text-gray-800 text-3xl">Features to Boost Your Developer Journey</h1>
+		<div className="grid md:grid-cols-4 gap-6 p-6 text-gray-800">
 			{[
 				{
 					title: "Share Your Knowledge",
@@ -76,12 +74,12 @@ export default function Landing() {
 					desc: "Meet and interact with other developer, share, learn and grow together"
 				}
 			].map((item) => (
-				<div key={item.title} className="rounded-2xl shadow bg-linear-to-br from-[#1C134E] to-[#306BD0] p-4 cursor-pointer transition-all duration-300 ease-out
+				<div key={item.title} className="rounded-2xl shadow  bg-white p-4 cursor-pointer transition-all duration-300 ease-out
 				hover:-translate-y-1.5
 				hover:scale-[1.07]
 				hover:shadow-2xl">
-					<h2 className="font-semibold mb-2 text-2xl">{item.title}</h2>
-					<p className="text-white/70">{item.desc}</p>
+					<h2 className="font-semibold mb-2 text-gray-800 text-2xl">{item.title}</h2>
+					<p className="text-gray-700">{item.desc}</p>
 				</div>
 			))}
 		</div>
@@ -92,8 +90,8 @@ export default function Landing() {
         <h1 className="text-center text-4xl font-semibold mb-6">
           Latest Blog Post
         </h1>
-        <div className="flex rounded-xl p-6 bg-white/50">
-			<img src={CoderImage} alt="Post" 
+        <div className="flex rounded-xl p-6 bg-white border border-slate-200">
+			<img src={blogImage} alt="Post" 
 				className="w-96 h-32 md:h-64 object-cover rounded-lg"/>
 			<div className="ml-10 gap-4">
 				<h2 className="text-2xl font-bold">Tips for Improving Consistency in Coding</h2>
@@ -111,7 +109,7 @@ export default function Landing() {
       </div>
 
       {/* Footer */}
-      <footer className="shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.6)] bg-linear-to-br-[#306BD0] text-white/80 backdrop-blur px-10 py-8 mt-10">
+      <footer className="shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.6)] bg-white text-gray-700 backdrop-blur px-10 py-8 mt-10">
 		<div className="grid grid-cols-5 text-xl">
 		<h1 className="text-white text-3xl font-semibold">DevBlog</h1>
 			<div>
@@ -147,8 +145,8 @@ export default function Landing() {
 			</div>
 			<div className="">
 			<h3>Subscribe to our newsletter</h3>
-				<div className="flex items-center mt-5"><input className="w-45 h-8 p-2 rounded-l-md bg-white text-base text-gray-900 focus:shadow-xl focus:outline-none focus:ring-blue-500" type="text" placeholder="Enter your email"/>
-				<button className="bg-[#306BD0] text-lg rounded-r-md w-50 h-8 hover:bg-[#1C134E]">Subscribe</button>
+				<div className="flex items-center mt-5"><input className="w-45 h-8 p-2 rounded-l-md bg-[#EDEEF3] text-base focus:shadow-xl focus:outline-none focus:ring-blue-500" type="text" placeholder="Enter your email"/>
+				<button className="bg-[#19191C] text-lg text-gray-300 rounded-r-md w-50 h-8 hover:bg-[#0b0820]">Subscribe</button>
 				</div>
 				<section className="flex gap-6 p-2">
 				<a href="https://github.com/supersingh471" 
