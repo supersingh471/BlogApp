@@ -12,12 +12,14 @@ import { BsDiscord } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io5";
 import DocsList from "../components/DocsList";
 import DocsCard from "../components/DocsCard";
+import BlogsCard from "../components/BlogsCard";
+import { useState } from "react";
 
 export default function Dashbaord1() {
-
-
+	const [openDocs, setOpenDocs] = useState(true);
+	const [openBlogs, setOpenBlogs] = useState(true);
 	return (
-		<div className="flex flex-col min-h-screen w-full-screen bg-[linear-gradient(to_bottom,#F8F9FB,#F4F3FB)]">
+		<div className="flex flex-col h-screen overflow-x-hidden w-full bg-[linear-gradient(to_bottom,#F8F9FB,#F4F3FB)]">
 			<header className="flex items-center h-17 bg-white border-b border-gray-300"><Heading title="DevBlog"/>
 			<nav className="flex gap-11">
 				<Link to={"/"} className="text-blue-600 font-semibold">Home</Link>
@@ -38,7 +40,7 @@ export default function Dashbaord1() {
 			</div>	
 			</nav>
 			</header>
-			<main className="flex-1 w-120 p-7 mt-5 ml-25">
+			<main className="flex-1 overflow-x-hidden p-7 mt-5 ml-25">
 			<p className="text-xl font-semibold text-gray-800">Build your community, start a project.</p>
 				<div className="flex gap-5 ">
 					<button className="flex items-center h-20 w-55 mt-5 gap-5 rounded-xl font-semibold text-gray-600 bg-white border border-gray-300 hover:border-[#7873db] cursor-pointer">
@@ -55,11 +57,43 @@ export default function Dashbaord1() {
 						</svg></span>
 						New blog</button>
 				</div>
-
-				<DocsList titleName={"Your Docs"} contentName={"Create a beautiful documentation for your product."}/>
-					<DocsCard/>
-				<DocsList titleName={"Your Blogs"} contentName={"Create and manage your blogs."}/>
-				
+				<section> 
+				{
+					openDocs ? (
+						<DocsList titleName={"Your Docs"}
+								 contentName={"Create a beautiful documentation for your product."}
+								 label={"Expand section"}
+								 open={openDocs}
+								 onShow={() => setOpenDocs(false)}
+								/>
+					) : (
+						<DocsCard titleName={"Your Docs"}
+								contentName={"Create a beautiful documentation for your product."}
+								label={"Collapse section"}
+								open={openDocs}
+								onShow={() => setOpenDocs(true)}
+								/>
+					)
+				}
+					
+				{
+					openBlogs ? (
+						<DocsList titleName={"Your Blogs"}
+								 contentName={"Create and manage your blogs."}
+								 label={"Expand section"}
+								 open={openBlogs}
+								 onShow={() => setOpenBlogs(false)}
+								 />
+					) : (
+						<BlogsCard  titleName={"Your Blogs"}
+									contentName={"Create and manage your blogs."}
+									label={"Collapse section"}
+									open={openBlogs}
+									onShow={() => setOpenBlogs(true)}
+						/>
+					)
+				}
+				</section>
 			</main>
 			<footer className="flex justify-between w-full border text-sm h-35 bg-white border-b border-gray-300">
 				<div className="w-180">

@@ -8,7 +8,7 @@ type docsProps = {
 	onShow: () => void;
 }
 
-export default function DocsCard({titleName, contentName, label, open, onShow}: docsProps) {
+export default function BlogsCard({titleName, contentName, label, open, onShow}: docsProps) {
 	const editedDate = new Date();
 
 	return (
@@ -19,7 +19,7 @@ export default function DocsCard({titleName, contentName, label, open, onShow}: 
 					open={open}
 					onShow={onShow}
 			  />
-			<div className="flex-1 max-w-full h-50 border bg-white/70 border-gray-300 mt-10 rounded-xl">
+			<div className="flex-1  max-w-full h-50 border bg-white/70 border-gray-300 mt-10 rounded-xl">
 			<div className="flex flex-col w-100 p-5">
 				<h1 className="font-semibold text-[#3f3f46]">Building DevBlog</h1>
 				<p className="text-sm font-semibold text-[#71717a]">devblogproject.hashnode.space</p>
