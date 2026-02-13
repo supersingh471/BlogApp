@@ -13,9 +13,10 @@ import { IoLogoYoutube } from "react-icons/io5";
 import DocsList from "../components/DocsList";
 import DocsCard from "../components/DocsCard";
 import BlogsCard from "../components/BlogsCard";
+import UserDropdownMenu from "../components/UserDropdownMenu";
 import { useState } from "react";
 
-export default function Dashbaord1() {
+export default function Dashbaord() {
 	const [openDocs, setOpenDocs] = useState(true);
 	const [openBlogs, setOpenBlogs] = useState(true);
 	return (
