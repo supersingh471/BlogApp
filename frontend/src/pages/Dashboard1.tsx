@@ -15,10 +15,12 @@ import DocsCard from "../components/DocsCard";
 import BlogsCard from "../components/BlogsCard";
 import UserDropdownMenu from "../components/UserDropdownMenu";
 import { useState } from "react";
+import Avatar from "../components/UserAvatar";
 
 export default function Dashbaord() {
 	const [openDocs, setOpenDocs] = useState(true);
 	const [openBlogs, setOpenBlogs] = useState(true);
+	const [openMenu, setOpenMenu] = useState(true);
 	return (
 		<div className="flex flex-col h-screen overflow-x-hidden w-full bg-[linear-gradient(to_bottom,#F8F9FB,#F4F3FB)]">
 			<header className="flex items-center h-17 bg-white border-b border-gray-300"><Heading title="DevBlog"/>
@@ -35,9 +37,19 @@ export default function Dashbaord() {
 				</span>
 				<BsMoon size={18} className="text-gray-600"/>
 				<BsBell size={18} className="text-gray-700"/>
-				<span className="flex items-center justify-center w-8 h-8 font-bold bg-gray-300 rounded-full fill-[#B4BCFE]">
-					VS
-				</span>
+				{
+					openMenu ? (
+						<Avatar
+						label={"VS"}
+						open={openMenu}
+						onShow={() => setOpenMenu(false)}/>
+					) : (
+						<UserDropdownMenu 
+						label={"VS"}
+						open={openMenu}
+						onShow={() => setOpenMenu(true)}/>
+					)
+				}
 			</div>	
 			</nav>
 			</header>

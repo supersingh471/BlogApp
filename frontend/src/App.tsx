@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard1";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Landing from "./pages/Landing";
+import UserDropDownMenu from "./components/UserDropdownMenu";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 			<Route path="/dashboard" element={<Dashboard/>}/>
 			<Route path="/signup" element={<Signup/>}/>
 			<Route path="/login" element={<Login/>}/>
+			<Route path="/menu" element={<UserDropDownMenu/>}/>
 		</Routes>
 		</BrowserRouter>
 		</>
