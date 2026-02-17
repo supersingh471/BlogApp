@@ -1,19 +1,10 @@
-import Avatar from "./UserAvatar"
-type props = {
-	label: string,
-	open: boolean,
-	onShow: () => void;
-}
 
-export default function UserDropDownMenu({label, open, onShow}: props) {
+export default function UserDropDownMenu() {
 	 
 	return (
-		<div className="flex col">
-			<Avatar
-			label={label} 
-			open={open}
-			onShow={onShow}/>
-		<div className="flex flex-col w-70 m-20 shadow-[0_5px_5px_rgba(0,0,0,0.2)] border border-zinc-300 rounded-xl">
+		<div className="flex absolute top-12.5 right-0 bg-white">
+			
+		<div className="flex flex-col w-70 shadow-[0_5px_5px_rgba(0,0,0,0.2)] border border-zinc-300 rounded-xl">
 			<div className="flex gap-3 border-b h-21 border-gray-300">
 			<div className="flex gap-3 p-2 m-2 w-65 rounded-lg hover:bg-zinc-100 cursor-pointer">
 			<span className="flex items-center justify-center w-12 h-12 font-bold text-xl bg-gray-300 rounded-full fill-[#c0c4eb]">

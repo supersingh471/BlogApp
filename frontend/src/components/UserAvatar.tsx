@@ -1,13 +1,13 @@
 type props = {
 	label: string,
-	open: boolean,
+	openMenu: boolean,
 	onShow: () => void;
 }
 
 
-export default function Avatar({label, open, onShow}: props) {
+export default function Avatar({label, openMenu, onShow}: props) {
 	return (
-		<button onClick={onShow} className={` ${open ? 'active' : ''} flex items-center justify-center w-8 h-8 font-bold bg-gray-300 rounded-full fill-[#B4BCFE] cursor-pointer`}>
+		<button onClick={onShow} className={` ${openMenu ? 'ring-3 ring-gray-600' : ''} flex items-center justify-center w-8 h-8 font-bold bg-gray-300 rounded-full fill-[#B4BCFE] cursor-pointer`}>
 					{label}
 				</button>
 	)
