@@ -3,7 +3,13 @@ import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import authMiddleware from "../authMiddleware";
 
-const prisma = new PrismaClient();
+
+import { PrismaPg } from "@prisma/adapter-pg";
+import dotenv from "dotenv";
+dotenv.config();
+
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+export const prisma = new PrismaClient({ adapter });
 const router = Router();
 
 router.post("/posts", authMiddleware, async (req: Request, res: Response) => {
@@ -13,7 +19,7 @@ router.post("/posts", authMiddleware, async (req: Request, res: Response) => {
 		data: {
 				title,
 				content,
-				authorId: req.userId!
+				authorId: req.user!.userId
 		},
 	}) 
 
@@ -29,7 +35,7 @@ router.get("/posts", authMiddleware, async (req, res) => {
 	try{
 		if(Id) {
 			//fetching single post this user
-			const postItem = await prisma.posts.findFirst({where: {id: Id, authorId: req.userId}});
+			const postItem = await prisma.posts.findFirst({where: {id: Id, authorId: req.user!.userId}});
 			/*if(!postItem) {
 				return res.status(400).json({
 					message: "Post not found"
@@ -38,7 +44,7 @@ router.get("/posts", authMiddleware, async (req, res) => {
 		}else {
 			//fetch all post for user
 			const allPosts = await prisma.posts.findMany({
-				where: {authorId: req.userId},
+				where: {authorId: req.user!.userId},
 				include: {author: true}
 			});
 
@@ -61,7 +67,7 @@ router.put("/posts", authMiddleware, async (req, res) => {
 		const updatePost = await prisma.posts.updateMany({
 			where: {
 				id: Id,
-				authorId: req.userId
+				authorId: req.user!.userId
 			},
 			data: {
 				title,
@@ -100,7 +106,7 @@ router.delete("/posts/:id", authMiddleware, async (req, res) => {
 			const deletedPost = await prisma.posts.deleteMany({
 				where: {
 					id: Id,
-					authorId: req.userId
+					authorId: req.user!.userId
 				},
 			})
 

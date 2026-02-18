@@ -1,6 +1,20 @@
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 export default function UserDropDownMenu() {
+
+	const navigate = useNavigate();
 	 
+	const handleLogout = async () => {
+		try {
+			await axios.post("http://localhost:3000/api/v1/user/logout", {
+				withCredential: true,
+			});
+			navigate("/landing");
+		} catch (error: any) {
+			console.error("failed to logout:", error);
+		}
+	}
 	return (
 		<div className="flex absolute top-12.5 right-0 bg-white">
 			
@@ -46,11 +60,11 @@ export default function UserDropDownMenu() {
 				</div>
 			</div>
 
-			<div className="m-1.5 text-[#ef3a49]">
+			<button onClick={handleLogout} className="m-1.5 text-[#ef3a49]">
 					<span className="flex gap-2 px-4.5 py-2 rounded-lg hover:bg-zinc-100 cursor-pointer">
 					<svg fill="none" viewBox="0 0 20 16" width="20" height="22"><path stroke="currentColor" d="M13.333 14.167 17.5 10m0 0-4.167-4.167M17.5 10h-10m0-7.5h-1c-1.4 0-2.1 0-2.635.272a2.5 2.5 0 0 0-1.093 1.093C2.5 4.4 2.5 5.1 2.5 6.5v7c0 1.4 0 2.1.272 2.635a2.5 2.5 0 0 0 1.093 1.092C4.4 17.5 5.1 17.5 6.5 17.5h1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"></path></svg>
 						Log out</span>
-			</div>
+			</button>
 		</div>
 		</div>
 	)

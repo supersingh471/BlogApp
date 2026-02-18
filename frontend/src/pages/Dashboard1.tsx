@@ -27,7 +27,7 @@ export default function Dashbaord() {
 	useEffect(() => {
 		function handleClickOutside(e: MouseEvent) {
 			if (avatarRef.current && !avatarRef.current.contains(e.target as Node)) {
-					setOpenMenu(!openMenu);
+					setOpenMenu(openMenu);
 			}
 		}
 
@@ -61,7 +61,7 @@ export default function Dashbaord() {
 					<Avatar label={"VS"}
 							openMenu={openMenu}
 							onShow={() => setOpenMenu(!openMenu)}/>
-					{openMenu && <UserDropdownMenu/>}
+					{!openMenu && <UserDropdownMenu/>}
 				</div>
 			</div>	
 			</nav>
@@ -83,7 +83,7 @@ export default function Dashbaord() {
 						</svg></span>
 						New blog</button>
 				</div>
-				<section className="h-150"> 
+				<section className="h-120"> 
 				{
 					openDocs ? (
 						<DocsList titleName={"Your Docs"}
