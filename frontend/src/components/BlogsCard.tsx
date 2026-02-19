@@ -19,11 +19,11 @@ export default function BlogsCard({titleName, contentName, label, open, onShow}:
 					open={open}
 					onShow={onShow}
 			  />
-			<div className="flex-1  max-w-full h-50 border bg-white/70 border-gray-300 mt-10 rounded-xl">
+			<div className="flex-1  max-w-full h-50 border bg-white/70 dark:bg-gray-900 border-gray-300 dark:border-gray-700 mt-10 rounded-xl">
 			<div className="flex flex-col w-100 p-5">
-				<h1 className="font-semibold text-[#3f3f46]">Building DevBlog</h1>
-				<p className="text-sm font-semibold text-[#71717a]">devblogproject.hashnode.space</p>
-				<div  className="mt-6 text-sm text-zinc-500">
+				<h1 className="font-semibold text-[#3f3f46] dark:text-gray-100">Building DevBlog</h1>
+				<p className="text-sm font-semibold text-[#71717a] dark:text-gray-400">devblogproject.devblog.space</p>
+				<div  className="mt-6 text-sm text-zinc-500 dark:text-gray-300">
 					<time dateTime={editedDate.toISOString()}>
 						Edited {editedDate.toLocaleDateString('en-india', {
 							day: 'numeric',
@@ -31,7 +31,7 @@ export default function BlogsCard({titleName, contentName, label, open, onShow}:
 							year: 'numeric'
 					})}</time>
 				</div>
-				<div className="flex items-center  border-t border-gray-300 w-133 h-15 mt-6 gap-5 text-gray-500 font-semibold">
+				<div className="flex items-center  border-t border-gray-300 dark:border-gray-700 dark:text-gray-100 w-133 h-15 mt-6 gap-5 text-gray-500 font-semibold">
 					<a className="flex items-center border gap-2 border-gray-300 text-sm px-3 py-1 rounded-full cursor-pointer">
 						<svg fill="none" viewBox="0 0 16 16" width="16" height="16">
 							<path stroke="currentColor" d="M10.215 3.118 6.07 7.263c-.275.275-.412.412-.527.566-.102.137-.19.283-.265.436-.083.173-.142.358-.259.729l-.61 1.93 1.93-.61c.37-.117.556-.175.729-.259.154-.074.3-.163.436-.265.154-.115.291-.252.566-.527l4.145-4.145m-2-2L11 2.333c.273-.272.409-.409.556-.481a1 1 0 0 1 .888 0c.147.072.283.209.556.481.273.273.409.41.482.556a1 1 0 0 1 0 .888c-.073.147-.21.284-.482.556l-.785.785m-2-2 2 2M13.333 14H2.667" stroke-linecap="round" stroke-linejoin="round"></path>
