@@ -6,7 +6,6 @@ import { GiPenguin } from "react-icons/gi";
 import { IoIosArrowForward } from "react-icons/io";
 
 
-
 export default function Landing() {
   return (
     <div className="min-h-screen bg-[linear-gradient(to_bottom,#FBFBFC,#F4F3FB)] backdrop-blur-md">

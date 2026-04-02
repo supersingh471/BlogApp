@@ -26,14 +26,14 @@ router.post("/signup", async (req, res) => {
 			});
 		}
 
-		const hashPassword = await bcrypt.hash(password, 10)
-
 		if (!email || !password || !firstName || !lastName) {
   			return res.status(400).json({ 
 				message: "All fields required" 
 			});
 		}
 
+		const hashPassword = await bcrypt.hash(password, 10)
+		
 		const user = await prisma.user.create({
 			data: {
 				email,

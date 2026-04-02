@@ -4,11 +4,19 @@ A full-stack Blog Application built using React (Vite) + Tailwind CSS on the fro
 
 Users can sign up, sign in, and perform CRUD operations on their own blog posts using JWT-based authentication.
 
-## Features Overview
+## Key features:
+
+- Custom domain — map your own domain to your Hashnode blog for free
+- Community feed — your posts appear in a global feed read by other developers
+- Newsletter — built-in newsletter feature to send posts to subscribers
+- GitHub backup — auto-backup your posts to a GitHub repo
+- AI writing assistant — helps with writing and editing posts
+- Series — group related posts together
+- Headless CMS mode — use Hashnode as a backend via their GraphQL API and build your own frontend
 
 ### Authentication
 - User signup and signin
-- JWT-based authentication
+- JWT-HTTP Cookie based authentication
 - Protected API routes using middleware
 
 ### Blog Management
@@ -85,7 +93,6 @@ npm run dev
 ### Backend (`.env`)
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/blogdb"
-JWT_SECRET="your-secret-key"
 PORT=3000
 ```
 

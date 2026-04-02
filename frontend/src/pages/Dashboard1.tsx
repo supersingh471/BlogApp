@@ -83,12 +83,14 @@ export default function Dashbaord() {
 						</svg>
 						</span>
 						New docs</button>
+					<Link to={"/blog"}>
 					<button className="flex items-center h-20 w-55 mt-5 gap-5 rounded-xl font-semibold text-gray-600 dark:text-gray-100 dark:border-gray-700 bg-white border dark:bg-gray-900 border-gray-300 hover:border-[#6bce8f] cursor-pointer">
 					<span className="ml-5 px-2 py-2 rounded-lg border-[#9bf7b7] border bg-[#f0fdf4]">
 					<svg fill="none" viewBox="0 0 24 24" width="24" height="24">
 					<path stroke="green" d="M8.25 3.91H6c-1.66 0-3 1.336-3 3v2.5m5.25-5.5H18c1.66 0 3 1.34 3 3v2.5M8.25 3.91v5.5m4.25 10.68H6c-1.66 0-3-1.34-3-3V9.41m18 0v2.84m0-2.84H8.25M3 9.41h5.25M18.5 15v6m3-3h-6" stroke-linecap="round" stroke-width="1.5"></path>
 						</svg></span>
 						New blog</button>
+						</Link>
 				</div>
 				<section className="h-120"> 
 				{
