@@ -13,3 +13,6 @@ Thumbs.db
 
 # Prisma
 prisma/generated/
+
+#frontend
+color_codes

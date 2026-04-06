@@ -4,7 +4,7 @@ type Buttonprops = {
 };
 
 
-export function Button({title, icon} : Buttonprops) {
+export default function Button({title, icon} : Buttonprops) {
 
 	return (
 		<button className="flex items-center font-semibold cursor-pointer">{title}{icon}</button>

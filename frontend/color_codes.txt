@@ -1,0 +1,4 @@
+background: #27272a
+
+blog_page: #18181b
+	button: #5588fb
