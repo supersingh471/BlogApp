@@ -17,3 +17,5 @@ router.post("/signin", asynce (req, res) => {
 	checks if user doesn't exist then send error
 	if exist then it assign the JWT_SECRET using sign() function
 })
+
+tailwind Merge is used to resolve tailwind conflict between base styling and parent styling 

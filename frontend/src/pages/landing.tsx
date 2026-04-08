@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import blogImage from '../assets/blogImage.png';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { GiPenguin } from "react-icons/gi";
