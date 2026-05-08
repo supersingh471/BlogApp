@@ -5,6 +5,7 @@ import Login from "./pages/login";
 import Landing from "./pages/Landing";
 import Blog from "./pages/blog";
 import UserDropDownMenu from "./components/UserDropdownMenu";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 		<>
 		<BrowserRouter>
 		<Routes>
+			<Route path="/home" element={<Home/>}/>
 			<Route path="/Landing" element={<Landing/>}/>
 			<Route path="/dashboard" element={<Dashboard/>}/>
 			<Route path="/signup" element={<Signup/>}/>

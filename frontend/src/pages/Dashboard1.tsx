@@ -43,7 +43,8 @@ export default function Dashbaord() {
 
 	return (
 		<div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-[linear-gradient(to_bottom,#F8F9FB,#F4F3FB)] dark:bg-gray-900">
-			<header className="flex items-center h-16 bg-white border-b border-gray-300 dark:border-gray-700 dark:bg-gray-900"><Heading title="DevBlog"/>
+			<header className="flex items-center h-16 bg-white border-b border-gray-300 dark:border-gray-700 dark:bg-gray-900">
+				<Heading title="DevBlog"/>
 			<nav className="flex justify-between w-80">
 				<Link to={"/"} className="px-3 py-1 hover:bg-zinc-100 rounded-full text-blue-600 font-semibold">Home</Link>
 				<Link to={"/"} className="px-3 py-1 hover:bg-zinc-100 rounded-full font-semibold text-gray-500 dark:text-gray-400">Products</Link>
